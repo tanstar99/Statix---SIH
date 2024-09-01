@@ -1,0 +1,39 @@
+.bed-availability {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+  }
+  
+  .bed-availability h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .bed-availability table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .bed-availability table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  .bed-availability th, td {
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .bed-availability th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .bed-availability tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .bed-availability tr:hover {
+    background-color: #ddd;
+  }
+  
