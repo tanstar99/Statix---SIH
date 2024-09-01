@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bed Assigning Page</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h3 {
+            text-align: center;
+            color: #007BFF;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            padding: 15px 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        nav ul li:hover {
+            background-color: #575757;
+        }
+
+        nav ul li.sep {
+            border-left: 1px solid white;
+            padding-left: 30px;
+            margin-left: 20px;
+        }
+
+        nav ul li.alag {
+            float: right;
+        }
+
+        /* Header */
+        header.center {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0;
+            color: #007BFF;
+        }
+
+        /* Form Styles */
+        .bed-assignment {
+            width: 60%;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .bed-assignment section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .bed-assignment section h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .bed-assignment input[type="text"],
+        .bed-assignment select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .bed-assignment label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Button Styles */
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Button Container */
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Additional Notes Field */
+        .additional-notes {
+            width: calc(100% - 22px); /* Adjusted to account for padding and border */
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>HOME</li>
+            <li>SERVICES</li>
+            <li>ABOUT US</li>
+            <li>CONTACT US</li>
+            <li class="sep">BED ASSIGNMENT</li>
+            <li class="alag">SIGN UP</li>
+            <li>LOG OUT IMAGE</li>
+        </ul>
+    </nav>
+    <header class="center">Bed Assignment Form</header>
+    <h3>Assign Bed to Patient</h3>
+    <div class="bed-assignment">
+        <section class="patient-info">
+            <form method="POST" action="submit-bed-assignment">
+                <label for="patient-name">Patient Name:</label>
+                <input type="text" id="patient-name" name="patient-name" placeholder="Enter Patient Name" required>
+                
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                
+                <label for="blood-group">Blood Group:</label>
+                <select id="blood-group" name="blood-group" required>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+                
+                <label for="illness">Patient's Illness:</label>
+                <select id="illness" name="illness" required>
+                    <option value="flu">Flu</option>
+                    <option value="diabetes">Diabetes</option>
+                    <option value="hypertension">Hypertension</option>
+                    <option value="asthma">Asthma</option>
+                    <option value="heart-disease">Heart Disease</option>
+                    <option value="pneumonia">Pneumonia</option>
+                    <option value="cancer">Cancer</option>
+                    <option value="arthritis">Arthritis</option>
+                    <option value="stroke">Stroke</option>
+                    <option value="kidney-disease">Kidney Disease</option>
+                    <option value="migraine">Migraine</option>
+                    <option value="allergy">Allergy</option>
+                    <option value="covid-19">COVID-19</option>
+                </select>
+            </form>
+        </section>
+
+        <section class="bed-info">
+            <h3>Bed Details</h3>
+            <form method="POST" action="assign-bed">
+                <label for="bed-id">Bed ID:</label>
+                <input type="text" id="bed-id" name="bed-id" placeholder="Enter Bed ID" required>
+                
+                <label for="bed-type">Bed Type:</label>
+                <select id="bed-type" name="bed-type" required>
+                    <option value="general">General</option>
+                    <option value="semi-private">Semi-Private</option>
+                    <option value="private">Private</option>
+                    <option value="icu">ICU</option>
+                </select>
+                
+                <label for="availability-status">Availability Status:</label>
+                <select id="availability-status" name="availability-status" required>
+                    <option value="available">Available</option>
+                    <option value="occupied">Occupied</option>
+                </select>
+                
+                <label for="assigned-by">Assigned By:</label>
+                <input type="text" id="assigned-by" name="assigned-by" placeholder="Enter Your Name" required>
+                
+                <label for="room-number">Room Number:</label>
+                <input type="text" id="room-number" name="room-number" placeholder="Enter Room Number" required>
+                
+                <label for="admission-date">Admission Date:</label>
+                <input type="date" id="admission-date" name="admission-date" required>
+                
+                <label for="discharge-date">Expected Discharge Date:</label>
+                <input type="date" id="discharge-date" name="discharge-date">
+                
+                <label for="additional-notes">Additional Notes:</label>
+                <textarea id="additional-notes" name="additional-notes" class="additional-notes" placeholder="Enter any additional notes" rows="4"></textarea>
+                
+                <button type="submit">Assign Bed to Patient</button>
+            </form>
+        </section>
+
+        <section class="alternative-hospital">
+            <h3>Alternative Hospital</h3>
+            <form method="POST" action="check-bed-availability">
+                <label for="alternative-hospital">Send to Nearby Hospital (if no beds available):</label>
+                <select id="alternative-hospital" name="alternative-hospital">
+                    <option value="aiims">AIIMS - All India Institute of Medical Sciences</option>
+                    <option value="sir-ganga-ram">Sir Ganga Ram Hospital</option>
+                    <option value="max-hospital">Max Super Speciality Hospital</option>
+                    <option value="fortis-escorts">Fortis Escorts Heart Institute</option>
+                    <option value="apollo-hospital">Apollo Hospital</option>
+                    <option value="blk-hospital">BLK Super Speciality Hospital</option>
+                    <option value="safdarjung-hospital">Safdarjung Hospital</option>
+                    <option value="rml-hospital">Ram Manohar Lohia Hospital (RML)</option>
+                    <option value="indraprastha-apollo">Indraprastha Apollo Hospital</option>
+                    <option value="hindu-rao">Hindu Rao Hospital</option>
+                    <option value="dd-upadhyay-hospital">Deen Dayal Upadhyay Hospital</option>
+                    <option value="lnjp-hospital">Lok Nayak Jai Prakash Narayan Hospital (LNJP)</option>
+                    <option value="rajiv-gandhi-cancer-institute">Rajiv Gandhi Cancer Institute & Research Centre</option>
+                    <option value="moolchand-hospital">Moolchand Medcity Hospital</option>
+                    <option value="delhi-heart-lung-institute">Delhi Heart and Lung Institute</option></select>
+
+                    <button type="button" onclick="location.href='bed-availability.html'">Check Bed Availability</button>
+
+                            </form>
+                        </section>  
+                    </div>
+                    </body> </html>
