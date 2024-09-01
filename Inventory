@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Inventory Management</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h3, h2 {
+            text-align: center;
+            color: #007BFF;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            padding: 15px 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        nav ul li:hover {
+            background-color: #575757;
+        }
+
+        nav ul li.sep {
+            border-left: 1px solid white;
+            padding-left: 30px;
+            margin-left: 20px;
+        }
+
+        nav ul li.alag {
+            float: right;
+        }
+
+        /* Container Styles */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        /* Button Styles */
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Form Styles */
+        form {
+            margin-top: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input, form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Alert Styles */
+        .alert {
+            background-color: #ffdddd;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>HOME</li>
+            <li>SERVICES</li>
+            <li>ABOUT US</li>
+            <li>CONTACT US</li>
+            <li class="sep">INVENTORY MANAGEMENT</li>
+            <li class="alag">SIGN UP</li>
+            <li>LOG OUT IMAGE</li>
+        </ul>
+    </nav>
+    <header class="center">Medicine Inventory Management</header>
+    <div class="container">
+        <section class="stock-overview">
+            <h3>Stock Overview</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Medicine Name</th>
+                        <th>Stock Available</th>
+                        <th>Expiry Date</th>
+                        <th>Supplier Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Paracetamol</td>
+                        <td>100</td>
+                        <td>2025-01-01</td>
+                        <td>HealthCo Pharma</td>
+                    </tr>
+                    <tr>
+                        <td>Ibuprofen</td>
+                        <td>80</td>
+                        <td>2024-06-15</td>
+                        <td>Medicorp</td>
+                    </tr>
+                    <tr>
+                        <td>Amoxicillin</td>
+                        <td>50</td>
+                        <td>2025-03-20</td>
+                        <td>Global Meds</td>
+                    </tr>
+                    <tr>
+                        <td>Ciprofloxacin</td>
+                        <td>60</td>
+                        <td>2024-09-10</td>
+                        <td>WellCare</td>
+                    </tr>
+                    <tr>
+                        <td>Metformin</td>
+                        <td>70</td>
+                        <td>2025-07-25</td>
+                        <td>PharmaGenix</td>
+                    </tr>
+                    <tr>
+                        <td>Lisinopril</td>
+                        <td>90</td>
+                        <td>2024-11-30</td>
+                        <td>HealthCo Pharma</td>
+                    </tr>
+                    <tr>
+                        <td>Prednisone</td>
+                        <td>40</td>
+                        <td>2025-05-15</td>
+                        <td>Medicorp</td>
+                    </tr>
+                    <tr>
+                        <td>Omeprazole</td>
+                        <td>110</td>
+                        <td>2024-12-10</td>
+                        <td>Global Meds</td>
+                    </tr>
+                    <tr>
+                        <td>Atorvastatin</td>
+                        <td>85</td>
+                        <td>2025-02-28</td>
+                        <td>WellCare</td>
+                    </tr>
+                    <tr>
+                        <td>Losartan</td>
+                        <td>95</td>
+                        <td>2024-08-22</td>
+                        <td>PharmaGenix</td>
+                    </tr>
+                    <tr>
+                        <td>Azithromycin</td>
+                        <td>55</td>
+                        <td>2025-04-05</td>
+                        <td>HealthCo Pharma</td>
+                    </tr>
+                    <tr>
+                        <td>Hydrochlorothiazide</td>
+                        <td>65</td>
+                        <td>2024-10-01</td>
+                        <td>Medicorp</td>
+                    </tr>
+                    <tr>
+                        <td>Gabapentin</td>
+                        <td>75</td>
+                        <td>2025-06-30</td>
+                        <td>Global Meds</td>
+                    </tr>
+                    <tr>
+                        <td>Acetaminophen</td>
+                        <td>85</td>
+                        <td>2024-12-31</td>
+                        <td>WellCare</td>
+                    </tr>
+                    <tr>
+                        <td>Sertraline</td>
+                        <td>40</td>
+                        <td>2025-08-15</td>
+                        <td>PharmaGenix</td>
+                    </tr>
+                    <tr>
+                        <td>Furosemide</td>
+                        <td>90</td>
+                        <td>2024-09-05</td>
+                        <td>HealthCo Pharma</td>
+                    </tr>
+                    <tr>
+                        <td>Clopidogrel</td>
+                        <td>60</td>
+                        <td>2025-02-20</td>
+                        <td>Medicorp</td>
+                    </tr>
+                    <tr>
+                        <td>Albuterol</td>
+                        <td>50</td>
+                        <td>2024-11-25</td>
+                        <td>Global Meds</td>
+                    </tr>
+                    <tr>
+                        <td>Montelukast</td>
+                        <td>70</td>
+                        <td>2025-01-10</td>
+                        <td>WellCare</td>
+                    </tr>
+                    <tr>
+                        <td>Simvastatin</td>
+                        <td>80</td>
+                        <td>2024-07-18</td>
+                        <td>PharmaGenix</td>
+                    </tr>
+                    <tr>
+                        <td>Cephalexin</td>
+                        <td>100</td>
+                        <td>2025-09-30</td>
+                        <td>HealthCo Pharma</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="excessive-stock">
+            <h3>Excessive Stock Medicines</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Medicine Name</th>
+                        <th>Stock Available</th>
+                        <th>Supplier Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Paracetamol</td>
+                        <td>100</td>
+                        <td>HealthCo Pharma</td>
+                    </tr>
+                    <tr>
+                        <td>Cephalexin</td>
+                        <td>100</td>
+                        <td>HealthCo Pharma</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="low-stock">
+            <h3>Low Stock Medicines</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Medicine Name</th>
+                        <th>Stock Available</th>
+                        <th>Supplier Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Prednisone</td>
+                        <td>40</td>
+                        <td>Medicorp</td>
+                    </tr>
+                    <tr>
+                        <td>Sertraline</td>
+                        <td>40</td>
+                        <td>PharmaGenix</td>
+                    </tr>
+                    <tr>
+                        <td>Albuterol</td>
+                        <td>50</td>
+                        <td>Global Meds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Message to Other Hospitals Section -->
+        <section id="message-to-hospitals">
+            <h2>Send Message to Other Hospitals</h2>
+            <form method="POST" action="send-message">
+                <label for="medicine-name">Medicine Name:</label>
+                <input type="text" id="medicine-name" name="medicine-name" placeholder="Enter Medicine Name" required>
+
+                <label for="quantity-needed">Quantity Needed:</label>
+                <input type="text" id="quantity-needed" name="quantity-needed" placeholder="Enter Quantity Needed" required>
+
+                <label for="hospital-name">Select Hospital:</label>
+                <select id="hospital-name" name="hospital-name" required>
+                    <option value="aiims">AIIMS - All India Institute of Medical Sciences</option>
+                    <option value="sir-ganga-ram">Sir Ganga Ram Hospital</option>
+                    <option value="max-hospital">Max Super Speciality Hospital</option>
+                    <option value="fortis-escorts">Fortis Escorts Heart Institute</option>
+                    <option value="apollo-hospital">Apollo Hospital</option>
+                    <option value="blk-hospital">BLK Super Speciality Hospital</option>
+                    <option value="safdarjung-hospital">Safdarjung Hospital</option>
+                    <option value="rml-hospital">Ram Manohar Lohia Hospital (RML)</option>
+                    <option value="indraprastha-apollo">Indraprastha Apollo Hospital</option>
+                    <option value="hindu-rao">Hindu Rao Hospital</option>
+                    <option value="dd-upadhyay-hospital">Deen Dayal Upadhyay Hospital</option>
+                    <option value="lnjp-hospital">Lok Nayak Jai Prakash Narayan Hospital (LNJP)</option>
+                    <option value="rajiv-gandhi-cancer-institute">Rajiv Gandhi Cancer Institute & Research Centre</option>
+                    <option value="moolchand-hospital">Moolchand Medcity Hospital</option>
+                    <option value="delhi-heart-lung-institute">Delhi Heart and Lung Institute</option>
+                </select>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Alert for Critical Stock -->
+        <div class="alert" id="critical-stock-alert">
+            <p>No critical stock issues at the moment.</p>
+        </div>
+
+        <button onclick="window.location.href='addrecord.html';">Add New Stock</button>
+    </div>
+</body>
+</html>
