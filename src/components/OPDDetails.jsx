@@ -1,5 +1,5 @@
 import React from 'react';
-import './OpdDetails.css';
+import './OPDDetails.css';
 
 const OpdDetails = ({ opdData }) => {
     // Filtering data based on status
