@@ -12,6 +12,23 @@ import MedicineInventory from './components/MedicineInventory';
 import OPDDetails from './components/OPDDetails';
 import AppointmentBooking from './components/Appointment';
 import AmbulanceBooking from './components/AmbulanceBooking';
+import React from 'react';
+import Card from './Card'; // Import the Card component
+
+const App = () => {
+  // Array of image URLs
+  const images = [
+    'https://via.placeholder.com/100',
+    'https://via.placeholder.com/100',
+    'https://via.placeholder.com/100',
+    'https://via.placeholder.com/100',
+    'https://via.placeholder.com/100',
+    'https://via.placeholder.com/100',
+    'https://via.placeholder.com/100',
+    'https://via.placeholder.com/100',
+    'https://via.placeholder.com/100',
+    'https://via.placeholder.com/100'
+  ];
 
 const sampleAppointments = [
   {

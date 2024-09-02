@@ -1,51 +1,112 @@
 /* Admin Navbar Styles */
 .admin-navbar {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-  }
-  
-  .admin-navbar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .admin-navbar ul li {
-    display: inline;
-    margin-right: 15px;
-  }
-  
-  .admin-navbar ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  /* User Navbar Styles */
-  .user-navbar {
-    background-color: #444;
-    color: white;
-    padding: 10px;
-  }
-  
-  .user-navbar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .user-navbar ul li {
-    display: inline;
-    margin-right: 15px;
-  }
-  
-  .user-navbar ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  /* Content Styles */
-  .admin-content, .user-content {
-    padding: 20px;
-  }
-  
+  background-color: #1f2b6c;
+  color: white;
+  padding: 10px 20px; /* Adds padding for visual spacing */
+  position: fixed; /* Fixes the navbar at the top */
+  top: 0; /* Positions it at the top of the viewport */
+  left: 0; /* Stretches to the left */
+  width: 100%; /* Makes the navbar cover the full width */
+  z-index: 1000; /* Ensures the navbar stays above other content */
+  display: flex;
+  align-items: center;
+}
+
+.admin-navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.admin-navbar ul li {
+  margin-right: 15px;
+}
+
+.admin-navbar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* User Navbar Styles */
+/* Navbar Container */
+.navbar-container {
+  position: relative; /* Creates a positioning context for the logo and navbar */
+}
+
+/* Logo Styles */
+.logo {
+  position: absolute; /* Positions the logo independently of the flow */
+  top: 10px; /* Adds some space from the top */
+  left: 20px; /* Adds some space from the left */
+  z-index: 1100; /* Ensures the logo stays above the navbar */
+}
+
+.logo-image {
+  position: absolute;
+  max-width: 100px; /* Adjusts logo size as needed */
+  height: auto; /* Maintains aspect ratio */
+  top: 0;
+  left: 0; 
+  margin: 10px;
+
+}
+
+/* User Navbar Styles */
+.user-navbar {
+  background-color: #1f2b6c;
+  color: white;
+  padding: 10px 20px; /* Adds padding for visual spacing */
+  position: fixed; /* Fixes the navbar at the top */
+  top: 50px; /* Adjusted to prevent overlap with the logo */
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures the navbar stays above other content but below the logo */
+  display: flex;
+  align-items: center;
+}
+
+.user-navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.user-navbar ul li {
+  margin-right: 15px;
+}
+
+.user-navbar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Content Styles */
+.admin-content, .user-content {
+  padding: 20px;
+  margin-top: 100px; /* Adds margin to prevent content from being hidden behind the navbar */
+}
+
+/* Services.css */
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-item:hover {
+  background-color: #f4f4f4;
+}
